@@ -1,0 +1,49 @@
+a {
+    text-decoration: none;
+}
+
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 16px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.url {
+    position: relative;
+    color: #006621;
+    margin-bottom: 4px;
+}
+
+.down-arrow {
+    width: 0px;
+    height: 0px;
+    border-width: 6px 5px 0 5px;
+    border-style: solid;
+    border-color: #006621;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    top: 35%;
+    position: absolute;
+    margin: 0 5px;
+}
+
+.description {
+    color: #555;
+    line-height: 18px;
+}
