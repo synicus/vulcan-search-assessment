@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import GoogleSearchItem from './GoogleSearchItem/GoogleSearchItem.js'
 import TitleScraper from './TitleScraper/TitleScraper.js'
+import ConfigurableTable from './ConfigurableTable/ConfigurableTable.js'
 
 class App extends Component {
   render() {
@@ -19,6 +19,10 @@ class App extends Component {
         <div className='solution'>
           <h1>Solution 2</h1>
           <TitleScraper/>
+        </div>
+        <div className='solution'>
+          <h1>Solution 3</h1>
+          <ConfigurableTable />
         </div>
       </div>
     );

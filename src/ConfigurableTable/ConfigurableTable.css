@@ -1,0 +1,167 @@
+button, input {
+  outline: none;
+}
+
+.cfg-table-container {
+  position: relative;
+}
+
+.cfg-table-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cfg-table {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.cfg-table-row {
+  display: flex;
+  flex: 1;
+}
+
+.cfg-table-cell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border: 1px solid white;
+  background-color: rgb(225, 238, 255);
+  padding: 10px;
+}
+
+.cfg-table-cell:first-child {
+  justify-content: flex-start;
+
+}
+
+.cfg-table-header {
+  display: flex;
+  flex: 2;
+  justify-content: space-between;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cfg-table-header-cell {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(0, 110, 255);
+  cursor: pointer;
+}
+
+.cfg-table-header-cell:hover {
+  background-color: rgb(42, 134, 255);
+}
+
+.sort-arrows {
+  fill: white;
+  margin-right: 5px;
+}
+
+.cfg-table-controls {
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: rgb(0, 110, 255);
+}
+
+.cfg-table-controls input {
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 110, 255);
+}
+
+.columns-menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 110, 255);
+  color: rgb(0, 110, 255);
+  cursor: pointer;
+}
+
+.columns-menu-button:hover {
+  background-color: rgb(206, 227, 255);
+}
+
+.columns-menu-button-symbol {
+  margin: auto;
+  outline: none;
+}
+
+.columns-menu {
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  padding: 0 10px;
+  z-index: 99;
+  position: absolute;
+  background-color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.columns-menu-item {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.columns-menu-item-first {
+  border-top: none;
+}
+
+
+/* CHECKBOXES */
+
+.chk-container {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  border: 1px solid rgb(42, 134, 255);
+  color: white;
+  margin-right: 5px;
+}
+
+.check {
+  margin: auto;
+}
+
+.chk-container:hover {
+  background-color: rgb(206, 227, 255);
+  color: rgb(206, 227, 255);
+}
+
+.checked {
+  background-color: rgb(42, 134, 255);
+}
+
+.checked:hover {
+  background-color: rgb(0, 110, 255);
+  color: white;
+}
+
+#no-records {
+  margin-top: 20px;
+  text-align: center;
+}

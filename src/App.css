@@ -6,7 +6,8 @@ body {
   margin: 0 auto;
   justify-content: center;
   align-items: stretch;
-  width: 600px;
+  min-width: 700px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
 }

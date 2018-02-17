@@ -10,17 +10,15 @@ class TitleScraper extends Component {
       title: '',
       isFetching: false
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.scrapeTitle = this.scrapeTitle.bind(this)
     this.debouncedScrapeTitle = debounce(this.scrapeTitle, 2000)
   }
   
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({value: e.target.value})
     this.debouncedScrapeTitle()
   }
 
-  scrapeTitle() {
+  scrapeTitle = () => {
     this.setState({isFetching: true})
     const regex = new RegExp('<title>(.+)</title>')
 
