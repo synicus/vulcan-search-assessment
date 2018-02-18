@@ -1,0 +1,75 @@
+.heatmap-container, .heatmap, .heatmap-header, .heatmap-hours {
+  /* grid-gap: 5px; */
+}
+
+.heatmap-container {
+  display: grid;
+  grid-template-columns: 80px auto 80px;
+  grid-template-rows: 80px auto 80px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  background-color: #ddd;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3);
+}
+
+.heatmap {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.heatmap-header {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: flex-end;
+}
+
+.heatmap-header :first-child {
+  grid-column: 1 / -1;
+}
+
+.heatmap-header div, .heatmap-hours div {
+  padding: 5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.heatmap-hours {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(24, 1fr);
+  justify-items: flex-end;
+}
+
+.heatmap-hours :first-child {
+  grid-row: 1 / -1;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.heatmap-cell {
+  padding: 10px;
+  background-color: #eee;
+  color: black;
+}
+
+.heatmap-gradient {
+  grid-row: 2;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(hsl(120, 100%, 50%), hsl(120, 100%, 100%))
+}
+
+.heatmap-gradient div {
+  padding: 8px;
+}

@@ -16,11 +16,19 @@ button, input {
   display: flex;
   flex-direction: column;
   text-align: right;
+  padding: 1px;
+  background-color: white;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3);
 }
 
 .cfg-table-row {
   display: flex;
   flex: 1;
+  background-color: rgb(225, 238, 255);
+}
+
+.cfg-table-row:nth-child(even) {
+  background-color: rgb(239, 246, 255);
 }
 
 .cfg-table-cell {
@@ -29,7 +37,6 @@ button, input {
   align-items: center;
   justify-content: flex-end;
   border: 1px solid white;
-  background-color: rgb(225, 238, 255);
   padding: 10px;
 }
 
@@ -104,7 +111,7 @@ button, input {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3);
   padding: 0 10px;
   z-index: 99;
   position: absolute;
@@ -112,6 +119,8 @@ button, input {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 600;
+  border: 1px solid rgb(0, 110, 255);
+  border-radius: 5px;
 }
 
 .columns-menu-item {

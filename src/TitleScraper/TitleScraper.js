@@ -7,7 +7,7 @@ class TitleScraper extends Component {
     super(props)
     this.state = {
       value: '',
-      title: '',
+      title: null,
       isFetching: false
     }
     this.debouncedScrapeTitle = debounce(this.scrapeTitle, 2000)
@@ -15,7 +15,9 @@ class TitleScraper extends Component {
   
   handleChange = (e) => {
     this.setState({value: e.target.value})
-    this.debouncedScrapeTitle()
+    e.target.value.length 
+      ? this.debouncedScrapeTitle()
+      : this.setState({title: null})
   }
 
   scrapeTitle = () => {
@@ -23,27 +25,34 @@ class TitleScraper extends Component {
     const regex = new RegExp('<title>(.+)</title>')
 
     // Because we're doing front-end scraping, I've used a proxy to bypass CORS issues
-    let uri = 'https://allorigins.me/get?method=raw&url=' + encodeURIComponent('https://' + this.state.value)
+    let uri = 'https://allorigins.me/get?method=raw&url=' + encodeURIComponent('http://' + this.state.value)
 
     fetch(uri)
       .then(res => res.text())
       .then(data => regex.exec(data))
-      .then(match => this.setState( {title: match[1], isFetching: false} ))
+      .then(match => {
+        match[1] === ''
+          ? this.setState({title: 'The page does not have a title', isFetching: false})
+          : this.setState( {title: match[1], isFetching: false} )
+      })
+      .catch(err => this.setState({title: 'Invalid URL, please try again', isFetching: false}) )
   }
   
   render() {
     return (
-      <form>
-        <label>
-          https://
+      <div className="title-scraper">
+        <div className="label">URL</div>
+        <form>
+          http://
           <input 
             type="text" 
             value={this.state.value} 
             onChange={this.handleChange} 
           />
-        </label>
-        <h3>TITLE: {this.state.isFetching ? 'Loading...' : this.state.title} </h3>
-      </form>
+        </form>
+        <div className="label">TITLE</div>
+        <h3>{this.state.isFetching ? 'Loading...' : this.state.title}</h3>
+      </div>
     )
   }
 }
